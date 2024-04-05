@@ -1,0 +1,345 @@
+@charset "UTF-8";
+
+:root {
+  /* color */
+  --white-color: #fff;
+  --black-color: #000;
+  --gray-color: #e7e7e9;
+  --orange-color: #ee6525;
+  --header-color: rgba(255, 255, 255, 0.5);
+}
+
+* {
+  margin: 0px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #000;
+  border-radius: 30px;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: #fff;
+  border-radius: 30px;
+}
+
+#wrap {
+  position: relative;
+}
+
+#header {
+  width: 100%;
+  height: 70px;
+  background-color: var(--header-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute; /* 배경위에 헤더 배치 */
+  top: 0;
+  left: 0;
+  position: fixed; /* 상단 바 고정 */
+  z-index: 2; /* 레이어 앞으로 */
+  padding: 0 3%;
+  backdrop-filter: blur(4px);
+  font-size: 15px;
+}
+
+#header nav {
+  margin-left: auto;
+}
+
+#header nav ul {
+  display: flex;
+  gap: 45px; /* 행과 열 사이의 간격 */
+}
+
+#header .util ul {
+  display: flex;
+  gap: 15px;
+  margin-left: 57px;
+}
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#main .swiper-pagination {
+  position: absolute;
+  top: 58%;
+  left: -38%;
+  margin: 40px auto;
+}
+
+#main .swiper-pagination-bullet {
+  border-radius: 0;
+  margin: 50px 2px;
+}
+#main .swiper-pagination-bullet-active {
+  width: 25px;
+  background-color: #000;
+  transition: all 0.15s;
+}
+
+/* 슬라이더 좌우 화살표 없애줌 */
+#main .swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none;
+}
+
+#main .section01 {
+  height: 1130px;
+  width: 100%;
+}
+
+.section01 .swiper-slide {
+  position: relative;
+  height: 1130px;
+  width: 100%;
+}
+
+.section01 .swiper-slide .main_center {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-left: 10.5%;
+}
+
+.section01 .swiper-slide .main_center .link a img {
+  margin-top: 3rem;
+}
+
+.section01 .swiper-slide figure {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* 이미지 슬라이드 겹침 현상 사라짐 */
+}
+
+.section01 .swiper-slide figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: mvAni 6s infinite;
+}
+
+@keyframes mvAni {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+.section01 .main_text h1 {
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 1.2;
+  letter-spacing: -1.2px;
+}
+
+.section01 .main_text p {
+  font-size: 15px;
+  margin-top: 15px;
+  line-height: 1.4;
+  letter-spacing: 0;
+  color: #666;
+}
+
+/* --------------🎁section02-------------- */
+
+.section02 {
+  height: 100%;
+  overflow: hidden;
+  margin: 80px auto;
+}
+
+.section02 article {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.section02 article .top {
+  margin-bottom: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.section02 article .top .top_text {
+  padding: 0 4%;
+}
+
+.section02 article .top .top_text h2 {
+  font-size: 50px;
+}
+
+.section02 article .top .top_text p {
+  color: #666;
+  margin-top: 16px;
+  line-height: 1.4;
+}
+
+.section02 article .top .swiper::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  margin: 0;
+  width: 220px;
+  height: 100%;
+  z-index: 3;
+  background: linear-gradient(to right, #fff, rgba(204, 204, 204, 0));
+}
+
+.section02 article .top .swiper-slide figcaption {
+  margin-top: 15px;
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: 0;
+  color: #666;
+}
+
+.section02 article .top figure {
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+}
+
+.section02 article .top figure img {
+  height: 100%;
+  width: 100%;
+  scale: 1.5;
+  object-fit: cover;
+  transition: all 1s;
+}
+
+.section02 article .top figure img:hover {
+  transform: scale(1.2);
+  transition: all 1s;
+}
+
+.section02 article .bottom {
+  display: flex;
+ align-items: center;
+}
+
+.section02 article .bottom .swiper-slide figcaption {
+    margin-top: 15px;
+    font-size: 16px;
+    line-height: 1.4;
+    letter-spacing: 0;
+    color: #666;
+  }
+
+  .section02 article .bottom .swiper::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 0;
+    width: 220px;
+    height: 100%;
+    z-index: 3;
+    background: linear-gradient(to left, #fff, rgba(204, 204, 204, 0));
+    }
+
+
+.section02 article .bottom .bottom_text {
+    padding: 0 4%;
+}
+
+.section02 article .bottom .bottom_text h2 {
+    font-size: 50px;
+}
+
+.section02 article .bottom .bottom_text p {
+    color: #666;
+    line-height: 1.4;
+    margin-top: 16px;
+}
+.section02 article .bottom figure {
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+}
+
+.section02 article .bottom figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 1s;
+}
+
+.section02 article .bottom figure img:hover {
+    transform: scale(1.2);
+    transition: all 1s;
+}
+
+/* --------------🎁section03-------------- */
+
+.section03 {
+    width: 100%;
+    height: 919px;
+    padding-left: 80px;
+    background-color:var(--gray-color);
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.section03 h3 {
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 1.2;
+    letter-spacing: -1.2;
+}
+
+.section03 p {
+    line-height: 1.4;
+    letter-spacing: 0;
+    color: #666;
+    margin-top: 16px;
+}
+
+.section03 .ipad {
+    position: absolute;
+    left: 50%;
+    top: 10%;
+}
+
+.section03 .ipad figure {
+    position: relative;
+}
+
+.section03 .ipad figure img {
+position: absolute;/* 하나로 포개짐 */
+left: 0;
+top: 0;
+
+}
+
+.section03 .ipad figure img+img {
+    opacity: 0;
+    transition: all 0.5s ;
+    animation: ipad 6s infinite;
+}
+
+@keyframes ipad {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
